@@ -1,0 +1,180 @@
+->Super WebTV Viewer 2.5 Template
+
+# DO NOT EDIT UNLESS YOU KNOW WHAT YOU'RE DOING!!!
+
+unedited-hash: 4c5754bb8b69739b6f414c2d159051da
+path: "WebTV-Viewer\WebTVIntel--2.5.exe"
+vers: "WebTV Viewer 2.5 (Build 117)"
+
+# Image Base:  0x00400000
+# Done WITHOUT a new PE section (if there's a need for more space, I'll add one)
+
+# Change the call location from ecx+16 to ecx+15 to unlock the communication stream
+hex-code 4900F: 08
+
+# Unlock the wtv- url access from the address bar.
+# This is beyond the viewer code (in the dll functionality; API calls)
+hex-code 1CE62B: 71
+
+
+# wtv-encryption
+hex-code 219883: 68D0024000
+
+# wtv-incarnation
+hex-code 507C2: 68826C7000
+
+# Change default (viewer) boot URL to client:GoToConn and NULL default home URL
+string-code 3A1DAC: "client:GoToConn"
+string-code 3A1DD0: "client:GoToConn"
+string-code 3A1DEC: "client:GoToConn"
+
+
+# Fix wtv-1800:/preregister? request
+  # Mae ANI invisible ("")
+hex-code 444DB: 68B8047500
+string-code 3504C4: "scriptless-visit-reason"
+string-code 3504B8: "10"
+hex-code 34FFF4: 00
+
+
+
+
+
+# Change default wtv-1800 IP to Pro's primary wtv-1800 IP.
+string-code 392AC8: "10.0.0.1"
+## Use this if you want to set it back.
+##string-code 392AC8: "10.0.128.1"
+
+# Remove unwanted header strings.
+hex-code 3A62E8: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+hex-code 3A62B4: 000000000000000000000000000000000000000000000000
+hex-code 3524D0: 00000000000000000000
+
+
+# Resource edits
+section-code .rsrc: Templates\ResData--2.5.res
+
+
+define wtv-encryption: {
+
+block-offset: 2D0
+block-size: 3356
+write-end: yes
+
+headers: {
+wtv-client-serial-number:
+wtv-user-requested-upgrade:
+wtv-system-cpuprid:
+wtv-system-version:
+wtv-capability-flags:
+wtv-client-bootrom-version:
+wtv-client-rom-type:
+wtv-system-chipversion:
+User-Agent:
+}
+
+}
+
+
+define wtv-incarnation: {
+
+block-offset: 306C82
+block-size: 865
+write-end: yes
+
+headers: {
+wtv-tourist-enabled:
+wtv-demo-enabled:
+wtv-default-client-scriptprops:
+wtv-default-client-useragent:
+wtv-system-cpuspeed:
+wtv-system-sysconfig:
+wtv-my-disk-sucks-sucks-sucks:
+wtv-disk-first-error:
+wtv-disk-size:
+wtv-client-address:
+}
+
+}
+
+define power-off: {
+
+block-offset: 31BF50
+block-size: 464
+isspecial: yes
+multiple: yes
+views: 3
+description: "Power off codes"
+
+forward I: "Function Off"
+forward I: "Function ID?"
+forward I: "PO number"
+forward I: "Alternative"
+
+}
+
+define client: {
+
+block-offset: 392248
+block-size: 1606
+isspecial: yes
+multiple: yes
+views: 15
+description: "Client functions"
+noblanks: yes
+
+forward Z*: "Client Function"
+
+}
+
+define HTML: {
+
+block-offset: 395EE4
+block-size: 1048
+isspecial: yes
+multiple: yes
+views: 15
+description: "HTML Tags"
+noblanks: yes
+
+forward Z*: "HTML Tag"
+
+}
+
+
+define SCODE: {
+
+block-offset: 3977E0
+block-size: 749
+isspecial: yes
+multiple: yes
+views: 15
+description: "Secret '&codes;'"
+noblanks: yes
+
+forward Z*: "&code;"
+
+}
+
+
+edit MANUFAC: {
+
+#block-offset: 42A15
+#block-size: 1
+#description: "Manufacture"
+#extended-description: "This is used for the logo on startup.  The 2.5 viewer has a builtin sumulator for the SSID reader.  The numbers are a bit off from the SSID system.  See my theory on SSIDs for more info on the manufacture section."
+
+examples {
+00: (Sony- DEFAULT)
+01: (Phillips Magnabox)
+02: (Mitsubish)
+03: (Fujitsu- needs correct JP ROMFS)
+04: (Samsung)
+05: (Echostar)
+06: (RCA- needs correct ROMFS)
+07: (Matsushita- needs correct JP ROMFS)
+09: (Amnesia)
+FF: (Disabled)
+}
+
+}

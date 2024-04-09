@@ -1,0 +1,34 @@
+            The Super WebTV Viewer Pather (In-Place Editor) Tool 3.0
+
+				Guiding Principles
+
+This is the new version of the SuperViewer IPE.  It is meant to be more friendly 
+and efficient than previous versions.  However, you still must understand that 
+this is a very powerful and wanted tool.  I wish that you try to keep this tool 
+tightly secured and make sure that you don't allow other people to download, use 
+or even know that you have it.
+
+Small paragraph but it should be clear to you.  Anyone who has this tool should 
+know the importance of keeping things like this secret.
+
+Why?
+
+Because people sometimes make stupid decisions with tools like this and that 
+makes it easier for Microsoft to find it.  The more people who have it, the more 
+chance that it will be narked.
+
+Why worry about Microsoft having this tool?
+
+Should be obvious.  "Microsoft" want's to keep it's services "safe" and "secure" 
+and to do that Microsoft needs to know the hackers (possibly you) who are 
+working against their "mission" and how these hackers go about doing that.  For 
+this point, Microsoft having a tool like this makes it harder for WebTV hackers 
+to do continue with their hobby.
+
+Thank you,
+
+Eric MacDonald
+ubergeek03@gmail.com
+
+January 5, 2005
+Guiding Principles Version 1.0

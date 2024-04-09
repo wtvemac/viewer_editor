@@ -1,0 +1,88 @@
+####################
+#  ERIC MACDONALD  #
+####################
+
+# Functions are formatted like Excell
+# GET(DATA) invokes the user's prompt.
+# ? is the user input, it only works if the user's prompt is invoked (with GET())
+# No other functions at this time.
+
+define BLANK: {
+description: "Blank out the header blocks."
+}
+
+
+define MattMan: {
+description: "MattMan's LC2 Box"
+wtv-client-serial-number: Hackers__Edition
+wtv-system-version: 16276
+wtv-client-bootrom-version: 2046
+wtv-client-rom-type: US-LC2-disk-0MB-8MB
+wtv-system-chipversion: 53608448
+User-Agent: Mozilla/4.0 WebTV/2.8.2 (compatible; MSIE 4.0)
+wtv-system-cpuspeed: 166164662
+wtv-system-sysconfig: 3116068
+wtv-disk-size: 8006
+wtv-capability-flags: 1fee0e1d9b1ffdef
+}
+
+
+# Thanks to Naphead
+define CLASSIC1: {
+description: "The Old WebTV Classic"
+wtv-client-serial-number: =GET(?)
+wtv-capability-flags: =GET(?)
+wtv-system-version: =GET(?)
+wtv-client-rom-type: bf0app
+wtv-client-bootrom-version: 105
+wtv-system-chipversion: 16842752
+wtv-system-sysconfig: 736935855
+wtv-system-cpuspeed: 166164458
+}
+
+define PLUS1: {
+description: "The Old WebTV Plus (LC2) EXPERIMENTAL"
+
+wtv-client-serial-number: =GET(?)
+wtv-capability-flags: =GET(?)
+wtv-system-version: =GET(?)
+wtv-client-rom-type: US-LC2-disk-0MB-8MB
+wtv-client-bootrom-version: 2046
+
+wtv-system-chipversion: 53608448
+wtv-system-sysconfig: 3116068
+wtv-system-cpuspeed: 166164662
+
+}
+
+
+# Thanks to Outatyme
+define PLUS2: {
+description: "The 'New' WebTV Plus (LC2.5)."
+User-Agent: =GET(?)
+wtv-client-serial-number: =GET(?)
+wtv-capability-flags: =GET(?)
+wtv-system-version: =GET(?)
+wtv-client-rom-type: US-LC2-flashdisk-0MB-16MB-softmodem-CPU5230
+wtv-client-bootrom-version: 2524
+wtv-system-chipversion: 53608448
+wtv-system-sysconfig: 3116068
+wtv-system-cpuspeed: 166164662
+wtv-disk-size: 8006
+}
+
+
+define VO: {
+description: "VO's LC2 Box"
+wtv-client-serial-number: 81eaf00500b002d5
+wtv-system-version: 16276
+wtv-client-bootrom-version: 2046
+wtv-client-rom-type: US-LC2-disk-0MB-8MB
+wtv-system-chipversion: 53608448
+User-Agent: Mozilla/4.0 WebTV/2.8.2 (compatible; MSIE 4.0)
+wtv-system-cpuspeed: 166164662
+wtv-system-sysconfig: 3116068
+wtv-disk-size: 8006
+wtv-capability-flags: 1fee0e1d9b1ffdef
+}
+

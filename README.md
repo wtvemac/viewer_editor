@@ -16,4 +16,4 @@ There's also other helper utilities built into this tool. Like the ability to ex
 
 This is meant for archival purposes. This hasn't been worked on in years. It's here for you to see my excellent programming and spelling skills.
 
-I'd suggest you take a look at https://turdinc.kicks-ass.net/Msntv/viewer/Hackers-Edition-WebTV-Viewer-Auto-Gen-SSID.html if you want something more modern.
+I'd suggest you take a look at [https://turdinc.kicks-ass.net/Msntv/viewer/Hackers-Edition-WebTV-Viewer-Auto-Gen-SSID.html](http://turdinc.kicks-ass.net:1489/viewergen/) if you want something more modern.
